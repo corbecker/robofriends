@@ -11,9 +11,8 @@ class CounterButton extends Component {
   shouldComponentUpdate(nextProps, nextState){
       if(this.state.count !== nextState.count) {
         return true;
-      } else{
-        return false;
       }
+      return false;
   }
 
   updateCount = () => {
@@ -23,9 +22,12 @@ class CounterButton extends Component {
   }
 
   render() {
-    console.log('counter button');
     return (
-      <button color={this.props.color} onClick={this.updateCount}>Count: { this.state.count} </button>
+      <button 
+        id='counterButton'
+        color={this.props.color} 
+        onClick={this.updateCount}>Count: { this.state.count} 
+      </button>
     );
   }
 }
